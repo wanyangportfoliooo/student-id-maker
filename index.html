@@ -7,7 +7,6 @@
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="icon" href="data:,">
 </head>
 <body>
     <!-- 載入畫面 -->
@@ -31,7 +30,7 @@
             <h2>AI STUDENT ID CARD</h2>
             <p>輕鬆製作專屬學生證</p>
             <div class="student-card-preview">
-<div style="width: 200px; height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">學生證預覽</div>
+                <div style="width: 200px; height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">學生證預覽</div>
             </div>
             <button id="continueBtn" class="btn-primary">點我製作學生證</button>
         </div>
@@ -115,4 +114,17 @@
                 <canvas id="finalCard"></canvas>
             </div>
             
-            <div class=
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn-primary">下載儲存</button>
+                <button id="shareBtn" class="btn-secondary">分享到社群</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/utils.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
