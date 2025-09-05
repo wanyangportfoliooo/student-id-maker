@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 學生證製作器</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- 載入畫面 -->
+    <div id="loading" class="loading hidden">
+        <div class="loading-spinner"></div>
+        <p>處理中...</p>
+    </div>
 
+    <!-- 頁面 1: 首頁 -->
+    <div id="page1" class="page active">
+        <div class="container">
+            <h1>AI 學生證製作器</h1>
+            <p>搖身一變成為學生！</p>
+            <button id="startBtn" class="btn-primary">開始製作</button>
+        </div>
+    </div>
+
+    <!-- 頁面 2: 說明頁 -->
+    <div id="page2" class="page">
+        <div class="container">
+            <h2>AI STUDENT ID CARD</h2>
+            <p>輕鬆製作專屬學生證</p>
+            <div class="student-card-preview">
+                <img src="assets/images/student-card-template.png" alt="學生證範例">
+            </div>
+            <button id="continueBtn" class="btn-primary">點我製作學生證</button>
+        </div>
+    </div>
+
+    <!-- 頁面 3: 拍照頁 -->
+    <div id="page3" class="page">
+        <div class="container">
+            <h2>拍攝大頭照</h2>
+            
+            <!-- 相機區域 -->
+            <div class="camera-container">
+                <video id="camera" autoplay playsinline></video>
+                <canvas id="preview" style="display: none;"></canvas>
+            </div>
+
+            <!-- 上傳選項 -->
+            <div class="upload-option">
+                <p>或選擇上傳照片</p>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <button id="uploadBtn" class="btn-secondary">選擇照片</button>
+            </div>
+
+            <!-- 控制按鈕 -->
+            <div class="controls">
+                <button id="captureBtn" class="btn-primary">拍照</button>
+                <button id="retakeBtn" class="btn-secondary hidden">重拍</button>
+                <button id="confirmPhotoBtn" class="btn-primary hidden">確認照片</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁面 4: 資料填寫頁 -->
+    <div id="page4" class="page">
+        <div class="container">
+            <h2>輸入個人資料</h2>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="userName">姓名：</label>
+                    <input type="text" id="userName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>性別：</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male"> 男</label>
+                        <label><input type="radio" name="gender" value="female"> 女</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="agreeTerms" required>
+                        我同意使用條款
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">完成註冊</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 頁面 5: 處理頁 -->
+    <div id="page5" class="page">
+        <div class="container">
+            <h2>製作中...</h2>
+            <div class="processing-animation">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p>等待大約10秒，就好啦～</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁面 6: 完成頁 -->
+    <div id="page6" class="page">
+        <div class="container">
+            <h2>你的專屬學生證</h2>
+            <div class="final-card-container">
+                <canvas id="finalCard"></canvas>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="downloadBtn" class="btn-primary">下載儲存</button>
+                <button id="shareBtn" class="btn-secondary">分享到社群</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/utils.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+Add complete HTML content
